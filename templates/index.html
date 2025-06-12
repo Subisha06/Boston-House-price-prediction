@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <title>BostonHousing</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+        }
+    </style>
+<body>
+    <h2>BostonHousing</h2>
+    <form action="/predict" method="post">
+        <label for="crim">CRIM:</label>
+        <input type="text" id="crim" name="crim"><br><br>
+        
+        <label for="zn">ZN:</label>
+        <input type="text" id="zn" name="zn"><br><br>
+        
+        <label for="indus">INDUS:</label>
+        <input type="text" id="indus" name="indus"><br><br>
+        
+        <label for="chas">CHAS:</label>
+        <input type="text" id="chas" name="chas"><br><br>
+        
+        <label for="nox">NOX:</label>
+        <input type="text" id="nox" name="nox"><br><br>
+        
+        <label for="rm">RM:</label>
+        <input type="text" id="rm" name="rm"><br><br>
+        
+        <label for="age">AGE:</label>
+        <input type="text" id="age" name="age"><br><br>
+        
+        <label for="dis">DIS:</label>
+        <input type="text" id="dis" name="dis"><br><br>
+        
+        <label for="rad">RAD:</label>
+        <input type="text" id="rad" name="rad"><br><br>
+        
+        <label for="tax">TAX:</label>
+        <input type="text" id="tax" name="tax"><br><br>
+        
+        <label for="ptratio">PTRATIO:</label>
+        <input type="text" id="ptratio" name="ptratio"><br><br>
+        
+        <label for="b">B:</label>
+        <input type="text" id="b" name="b"><br><br>
+        
+        <label for="lstat">LSTAT:</label>
+        <input type="text" id="lstat" name="lstat"><br>
+        <br>
+
+        <input type='submit' value='Predict'>
+    </form>
+    {% if prediction_text %}
+    <h3> {{ prediction_text }}</h3>
+    {% endif %}
+    
+
+</body>
+</head>
+</html>
