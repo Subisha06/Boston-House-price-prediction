@@ -32,5 +32,8 @@ def predict():
     prediction = model.predict([features])
     return render_template('index.html', prediction_text=f'Predicted value: {prediction[0]:.2f}')
 
+import os
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # 5000 for local, PORT for Render
+    app.run(host="0.0.0.0", port=port)
